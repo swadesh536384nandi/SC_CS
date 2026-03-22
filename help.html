@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonamukhi College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+	<link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczNSfZRz7GqQUL5nnfiyjwh7zVdznzgsnn4kPaMZi-to5nyVqMcGD18tddPrjQi-wwOZicqS2UjuJEz_Y9q0le5hO9POxMMgR4Cx-H7fl-t4gM977nSldM-02AbRA54gMfpwWjsJ1F2EhivPXa9IAJP0=w349-h270-s-no-gm?authuser=0"32x32">
+	
+    <style>
+        .slide { display: none; transition: opacity 0.5s ease-in-out; }
+        .slide.active { display: block; }
+        #mobile-menu { transition: max-height 0.3s ease-in-out; overflow: hidden; }
+		
+		a:hover {
+			background-color: white;
+			text-decoration: underline;
+			text-decoration-color: black;
+			color: #3b82f6;
+			
+		}
+		.card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+		
+    </style>
+</head>
+
+
+<!-- right click loock -->
+<script type="text/javascript" src="right_click.js" async="async"></script>
+
+
+<body class="bg-slate-50 font-sans leading-normal tracking-normal">
+
+    <!-- NAVIGATION -->
+	
+	<nav class="bg-gray-100 sticky top-0 z-50 shadow-md">
+		<div class="max-w-8xl mx-auto px-4 py-3">
+			<!-- Main Container: Flexible Column on Mobile, Row on Desktop -->
+			<div class="flex flex-col md:flex-row justify-between items-center py-2 md:h-24">
+				
+				<!-- Left Side: Logo & Date -->
+				<div class="flex items-center justify-between w-full md:w-auto space-x-2">
+					<div >
+						<img src="https://sonamukhicollege.ac.in/images/title.png" alt="College Title" class="w-full h-auto">
+					</div>
+					<!-- Date/Time: Hidden on very small screens or styled smaller -->
+					<div id="dateTime" class="text-green-600 text-sm md:text-3xl font-bold px-2 rounded hover:bg-black hover:text-white transition-colors"></div>
+				</div>
+
+				<!-- Right Side: Circular Logo & Department Name -->
+				<div class="flex items-center space-x-3 mt-2 md:mt-0">
+					<div class="text-right">
+						<span class="block text-sm md:text-2xl font-extrabold text-blue-900 tracking-tight leading-tight">
+							Department of <br class="md:hidden"> Computer Science
+						</span>
+					</div>
+					<img alt="Dept Logo" 
+						 class="rounded-full w-12 h-12 md:w-16 md:h-16 object-cover border-2 border-blue-900" 
+						 src="https://lh3.googleusercontent.com/pw/AP1GczNSfZRz7GqQUL5nnfiyjwh7zVdznzgsnn4kPaMZi-to5nyVqMcGD18tddPrjQi-wwOZicqS2UjuJEz_Y9q0le5hO9POxMMgR4Cx-H7fl-t4gM977nSldM-02AbRA54gMfpwWjsJ1F2EhivPXa9IAJP0=w349-h270-s-no-gm?authuser=0"/>
+				</div>
+
+			</div>
+		</div>       
+	</nav>
+	
+    <nav class="bg-blue-800 text-white sticky top-2 z-60 shadow-2xl">
+        <div class="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8 py-1">
+            <div class="flex justify-between items-center h-16 md:h-20">
+
+                <!-- Desktop Menu (Large Devices) -->
+                <div class="hidden lg:flex items-center space-x-8 font-medium">
+                    <a href="index.html" class="text-2xl">Home</a>
+                    <a href="about.html" class="hover:text-blue-400 text-2xl">About</a>
+                    <a href="faculite.html" class="text-2xl">Faculties</a>
+                    <a href="syllabus.html" class="text-2xl">Syllabus</a>
+                    <!--<a href="#" class="bg-yellow-500 text-2xl text-blue-900 px-6 py-2 rounded-full font-bold hover:bg-white transition duration-300">User Login</a>		-->
+					<div class="dropdown dropdown-right dropdown-center">
+						<div tabindex="0" role="button" class="btn m-1 bg-yellow-500 text-2xl"> Login/Register</div>
+						<ul tabindex="-1" class="dropdown-content menu bg-yellow-100 rounded-box z-1 w-52 p-2 shadow-sm">
+							<li><a class="text-black hover:text-green-600 text-2xl">Student</a></li>
+							<li><a class="text-black hover:text-pink-500 text-2xl">Employee</a></li>
+						</ul>
+					</div>
+				</div>
+
+                <!-- Mobile Menu Button (Small/Medium Devices) -->
+                <div class="lg:hidden flex items-center ">
+                    <button id="menu-btn" class="outline-none btn btn-square btn-ghost">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+				<!--HELP BOX LINK-->
+				<div>
+					<a href="#" class="bg-green-400 hover:bg-yellow-300 text-blue-900 px-6 py-2 rounded-full font-bold shadow-lg transition transform hover:scale-105">
+                        <i class="w-10 h-10 rounded-full border-2 border-pink-600 text-red-700 ">?  </i> Help Box
+                    </a>
+				</div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-blue-800 border-t border-blue-700">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#" class="block px-3 py-2 rounded-md text-2xl">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-2xl">About</a>
+                <a href="faculite.html" class="block px-3 py-2 rounded-md text-2xl">Faculties</a>
+                <a href="syllabus.html" class="block px-3 py-2 rounded-md text-2xl">Syllabus</a>
+				<div class="dropdown dropdown-right dropdown-end">
+					<div tabindex="0" role="button" class="btn m-1 bg-yellow-500 text-2xl"> Login/Register</div>
+					<ul tabindex="-1" class="dropdown-content menu bg-blue-200 rounded-box z-1 w-52 p-2 shadow-sm">
+						<li><a class="text-black hover:text-green-600 text-2xl">Student</a></li>
+						<li><a class="text-black hover:text-pink-500 text-2xl">Employee</a></li>
+					</ul>
+				</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT SECTION -->
+    <main class="max-w-7xl mx-auto px-4 py-16">
+		<div class="grid grid-cols-1 lg:grid-cols-1 md:grid-cols-1 gap-8">
+			
+		</div>
+	</main>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-300 text-cyan-500 mt-6 pb-6">
+		<div class="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-1 gap-8 text-center px-4">
+			
+			<!-- 1st column: College Info -->
+			<div>
+				<h3 class="text-3xl text-center font-bold border-b-2 border-gray-600 pb-2">Sonamuki College</h3>
+				<div class="space-y-1">
+					<h4 class="text-xl font-bold text-black border-gray-600 pb-2">
+						Sonamukhi College,<br>Sonamukhi - 722207, West Bengal, India
+					</h4>
+					<iframe class="w-full h-60 rounded-lg border-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.8368292292935!2d87.40656007538726!3d23.294785878983856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f78312253c45f5%3A0x9cf19746a091ccb6!2sSonamukhi%20College!5e1!3m2!1sen!2sin!4v1773898972381!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+				<br>
+				<ul class="space-y-2">
+					<li class='fas fa-envelope-open text-black' style='font-size:15px;color:blue'>
+						<a href="mailto:smkadmission@gmail.com" class="text-black hover:text-pink-500"> smkadmission@gmail.com</a>
+					</li>
+					<li class="fas fa-phone mr-3 " style="font-size:15px;color:blue">
+						<a class="px-2 text-black hover:text-pink-500" href="tel:+0324427525">+0324427525</a>
+					</li>
+				</ul>
+				<div class="flex justify-center md:justify-start space-x-6 text-2xl mt-4">
+					<a href="https://www.facebook.com/Sonamukhi-College-FB-Page-100270261455372/?ti=as" target="_blank"><i class="fab fa-facebook text-blue-600"></i></a>
+					<a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+					<a href="#" class="hover:text-blue-400"><i class="fab fa-instagram text-red-400"></i></a>
+				</div>
+			</div>
+
+			<!-- 2nd column: Quick Links -->
+			<div class="flex flex-col">
+				<h3 class="text-3xl text-center font-bold border-b-2 border-gray-600 pb-2">Quick Links</h3>
+				<div class="flex flex-col space-y-2 text-black text-2xl mt-4">
+					<a href="https://sonamukhicollege.ac.in/academic_calendar.php" target="_blank">Academic Calendar</a>
+					<a href="https://www.sonamukhicollege.com/student_login.aspx" target="_blank">Student Login</a>
+					<a href="https://unitrackbku.onlineregistrationindia.com/" target="_blank">BKU Exam & Result</a>
+					<a href="https://sonamukhicollege.com/Booksearch.aspx">Central Library</a>
+					<a href="http://www.ugc.ac.in" target="_blank">UGC Guidelines</a>
+					<a href="https://www.abc.gov.in/" target="_blank">ABC ID</a>
+					<a href="https://swayam.gov.in/" target='_blank'>SWAYAM</a>
+				</div>
+
+				<!-- Hit Counter: Visible only on Medium/Large screens here -->
+				<!--<div class="hidden md:block mt-auto pt-10">
+					<div id="sfcpwnangknk2tdkera8hswlztjrctw8xq4"></div>
+					<script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=pwnangknk2tdkera8hswlztjrctw8xq4&down=async" async></script>
+				</div> -->
+
+			</div>
+
+			<!-- 3rd column: Department of CS -->
+			<div>
+				<h3 class="text-3xl text-center font-bold border-b-2 border-gray-600 pb-2">Department of CS</h3>
+				<div class="space-y-1">
+					<h4 class="text-xl font-bold text-black border-gray-600 pb-2">
+						Department of Computer Science (1st Floor), <br>Sonamukhi - 722207, WB
+					</h4>
+					<iframe class="w-full h-60 rounded-lg border-10" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d382.33590902447156!2d87.41036917301847!3d23.294333470075646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1773901428732!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+				<div class="flex justify-center md:justify-start space-x-6 text-2xl mt-6">
+					<a href="https://www.facebook.com/profile.php?id=61555295591680" class="hover:text-blue-400" target="_blank"><i class="fab fa-facebook text-blue-600"></i></a>
+					<a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+					<a href="#" class="hover:text-blue-400"><i class="fab fa-instagram text-red-400"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="flex justify-center mt-10 pb-4">
+			<div id="sfcpwnangknk2tdkera8hswlztjrctw8xq4"></div>
+			<script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=pwnangknk2tdkera8hswlztjrctw8xq4&down=async" async></script>
+			<noscript>
+				<a href="https://www.freecounterstat.com" title="hit counter">
+					<img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=pwnangknk2tdkera8hswlztjrctw8xq4" border="0" title="counter" alt="Hit counter">
+				</a>
+			</noscript>
+		</div>
+		
+	</footer>
+	
+	<footer class="bg-pink-400 text-white p-3">
+		<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+			<div class="flex flex-col items-center md:items-end space-y-1">
+				<div class="flex justify-center">
+					<img src="https://lh3.googleusercontent.com/pw/AP1GczOwNMpbXkLSCf63nR4jZyRVA6pDPmA2UN5oJzyqBf_P5GmRMc-Ed9WNVgoo6OGfn2ZErtN8zk2Zy0Q9LxAvdxjfzMbbnXS1abPMKSbLZWMux8CgtOme9ozyfSZw45z2WgZ3bVIGHEDedZQ_8gRwcgU=w640-h480-s-no-gm?authuser=0" 
+						 alt="logo" 
+						 class="w-20 h-20 rounded-full border-2 border-white object-cover" />
+				</div>
+				
+				<p class="font-medium">Developed By: <span class="italic">Swadesh Nandi</span></p>
+				
+				<div class="flex items-center gap-3">
+					<a href="https://m.facebook.com/swadesh.nandi.56/" target="_blank" class="hover:scale-110 transition-transform">
+						<i class="fab fa-facebook-f text-blue-600 text-2xl"></i>
+					</a>
+					<a href="https://www.instagram.com/swadesh.nandi/" target="_blank" class="hover:scale-110 transition-transform">
+						<i class="fab fa-instagram text-yellow-400 text-2xl"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/swadesh-nandi-4992412b9/" target="_blank" class="hover:scale-110 transition-transform">
+						<img src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin" class="w-8 h-8"/>
+					</a>
+				</div>
+			</div>
+			
+			<div class="flex flex-col items-center md:items-start space-y-1">
+				<p class="font-medium">© 2026 Sonamukhi College. All rights reserved.</p>
+				
+				<a href="upload.html" 
+				   onclick="loadPage('notebook')" 
+				   target="admin_login"
+				   class="inline-block bg-green-300 text-black text-xl px-6 py-2 rounded-lg font-semibold hover:bg-green-400 transition-colors">
+					Admin Login
+				</a>
+				
+				<div class="text-sm opacity-90">
+					<p>Last Update: 19-03-2026</p>
+				</div>
+			</div>
+		</div>
+	</footer>	
+	
+	<!-- ALL script PART -->
+	<script>
+        // Hamburger Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+	</script>
+	<script type="text/javascript" src="slide.js" async="async"></script>
+	<script type="text/javascript" src="clock.js" async="async"></script>
+	<script type="text/javascript" src="notic_board.js" async="async"></script>
+	
+</body>
+</html>
+
